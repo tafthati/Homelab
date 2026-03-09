@@ -1,0 +1,16 @@
+
+services:
+  openspeedtest:
+    image: openspeedtest/latest
+    container_name: openspeedtest
+    labels:
+      - "diun.enable=true"
+    restart: unless-stopped
+    ports:
+      - "${OPENSPEEDTEST_PORT_HTTP}:3000"
+      - "${OPENSPEEDTEST_PORT_HTTPS}:3001"
+    environment:
+      - ENABLE_LETSENCRYPT=${ENABLE_LETSENCRYPT}  # Attiva dopo con true + DOMAIN_NAME
+      - DOMAIN_NAME=${DOMAIN_NAME}  # Metti il tuo dominio qui dopo
+      - USER_EMAIL=${USER_EMAIL}  # La tua email qui dopo
+      - TZ=${TZ}

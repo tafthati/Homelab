@@ -1,0 +1,20 @@
+services:
+  memos:
+    image: neosmemo/memos:stable
+    container_name: memos
+    labels:
+      - "diun.enable=true"
+    restart: unless-stopped
+    init: true
+    ports:
+      - "${MEMOS_PORT}:5230"
+    volumes:
+      - ${MEMOS_DATA}:/var/opt/memos
+    environment:
+      - TZ=${TZ}  # Fuso tuo
+    networks:
+      - default  # Compatibile homepage/Pi-hole
+
+networks:
+  default:
+    driver: bridge
