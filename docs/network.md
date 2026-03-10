@@ -7,18 +7,17 @@ Architettura di rete del homelab: indirizzi, servizi esposti e isolamento.
 ## Topologia
 
 ```
-                        Internet
+                         Internet
+                             │
+                        Oracle VPS
+                    (WireGuard server)
+                             │
+                     WireGuard Tunnel
+                             │
+                         ubuserver
+                    (WireGuard client)
                             │
-                       Oracle VPS
-                      (WireGuard server
-                       / exit node)
-                            │
-                    WireGuard Tunnel
-                            │
-                       ubuserver
-                     (WireGuard client)
-                            │
-                    Router LAN (192.XXX.X.X/24)
+                Router LAN (192.XXX.X.X/24)
                             │
               ┌─────────────┴─────────────┐
               │                           │
@@ -29,7 +28,7 @@ Architettura di rete del homelab: indirizzi, servizi esposti e isolamento.
 Il traffico in uscita verso internet transita attraverso il tunnel
 WireGuard verso il VPS Oracle, che funge da exit node.
 L'accesso remoto all'homelab avviene anch'esso tramite lo stesso
-tunnel — senza aprire porte sul router di casa.
+tunnel, senza aprire porte sul router di casa.
 
 ---
 

@@ -33,5 +33,5 @@ Specifiche del server fisico su cui gira l'intero homelab.
 - Server **fisico** con installazione bare-metal di Ubuntu Server
 - Il disco di sistema ospita OS e tutti i volumi Docker
 - I due dischi secondari sono dedicati esclusivamente allo storage
-- La memoria swap da 11GB garantiscce aura infinita
-- Regalato dal mio bff Ludovico
+- La memoria swap da 11GB garantisce aura infinita
+- Regalato dal bff Ludovico, che ti voglio bene!
