@@ -10,7 +10,7 @@ e dell'hardware del server.
 ### `disk_salute.sh`
 
 Monitoraggio completo della salute dei dischi fisici tramite
-parametri S.M.A.R.T. — controlla i valori critici di tutti
+parametri S.M.A.R.T. Controlla i valori critici di tutti
 i dischi e salva un log mensile con storico nel tempo.
 
 **Controlli eseguiti:**
@@ -58,7 +58,7 @@ sudo ./luminosita_giorno.sh
 ### `luminosita_notte.sh`
 
 Riduce la luminosità dello schermo al minimo per l'uso
-notturno — ideale per non affaticare gli occhi di notte.
+notturno, ideale per non affaticare gli occhi di notte e consumare poco.
 
 **Utilizzo:**
 
@@ -73,5 +73,5 @@ sudo ./luminosita_notte.sh
 - `disk_salute.sh` richiede `smartmontools` installato sul sistema
 - Gli script di luminosità richiedono `sudo` e funzionano solo
   su hardware con backlight Intel (`intel_backlight`)
-- Eseguire `disk_salute.sh` regolarmente — consigliato via cron
+- Eseguire `disk_salute.sh` regolarmente; consigliato via cron
   almeno una volta a settimana

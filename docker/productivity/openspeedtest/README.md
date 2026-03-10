@@ -1,7 +1,7 @@
 # 🚀 OpenSpeedTest
 
 OpenSpeedTest è uno strumento self-hosted per testare la velocità
-della rete locale direttamente dal browser — senza dipendere da
+della rete locale direttamente dal browser senza dipendere da
 server esterni come Speedtest.net o Fast.com.
 
 ---
@@ -10,7 +10,7 @@ server esterni come Speedtest.net o Fast.com.
 
 Testare la velocità verso server esterni misura la connessione
 internet, non la rete locale. OpenSpeedTest misura la velocità
-reale tra i dispositivi e il server — utile per verificare
+reale tra i dispositivi e il server ed è molto utile per verificare
 le performance del Wi-Fi, della rete cablata e del NAS Samba.
 
 ---
@@ -29,7 +29,7 @@ le performance del Wi-Fi, della rete cablata e del NAS Samba.
 ## Funzionalità
 
 - Test di velocità in download e upload sulla rete locale
-- Nessuna dipendenza da server esterni — tutto gira in LAN
+- Nessuna dipendenza da server esterni; tutto gira in LAN
 - Interfaccia web moderna e responsive
 - Risultati in tempo reale con grafico della velocità
 - Compatibile con qualsiasi browser senza plugin
@@ -45,19 +45,9 @@ le performance del Wi-Fi, della rete cablata e del NAS Samba.
 
 ---
 
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
-
----
-
 ## Note
 
 - Per risultati accurati eseguire il test da dispositivi collegati
-  via cavo — il Wi-Fi introduce variabili indipendenti dalla rete
+  via cavo; il Wi-Fi introduce variabili indipendenti dalla rete
 - Utile in combinazione con iperf3 per una diagnosi completa
   delle performance di rete

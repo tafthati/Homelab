@@ -72,7 +72,7 @@ sudo journalctl -u fail2ban -f
 ## Note
 
 - Fail2ban è la prima linea di difesa attiva del server
-- Opera in sinergia con l'autenticazione SSH a chiave pubblica —
+- Opera in sinergia con l'autenticazione SSH a chiave pubblica,
   insieme rendono praticamente impossibile un accesso non autorizzato
 - I ban sono temporanei per default e configurabili in permanenti
   per IP particolarmente aggressivi

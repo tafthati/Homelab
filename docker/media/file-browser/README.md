@@ -2,7 +2,7 @@
 
 File Browser è un gestore di file via interfaccia web che permette
 di navigare, caricare, scaricare, modificare e condividere file
-direttamente dal browser — senza bisogno di client FTP o accesso SSH.
+direttamente dal browser senza bisogno di client FTP o accesso SSH.
 
 ---
 
@@ -46,20 +46,11 @@ condivisione tramite link temporanei.
 | `docker-compose.yml` | Definizione del servizio |
 | `.env.example` | Variabili d'ambiente necessarie (copiare in `.env`) |
 
----
-
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
 
 ---
 
 ## Note
 
-- Le credenziali di default al primo avvio sono `admin` / `admin` — cambiarle subito
+- Le credenziali di default al primo avvio sono `admin` / `admin` e vanno subito cambiate
 - Le cartelle accessibili vanno montate come volumi nel `docker-compose.yml`
 - I permessi utente sono configurabili granularmente per ogni cartella montata

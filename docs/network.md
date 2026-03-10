@@ -95,7 +95,7 @@ Pi-hole funge da DNS resolver per tutta la rete locale:
 
 Ogni progetto Compose ha la propria rete bridge dedicata.
 I container di progetti diversi non possono comunicare tra loro
-a meno di una connessione esplicita — principio di least privilege.
+a meno di una connessione esplicita; principio di least privilege (eheh).
 
 | Rete | Progetto |
 |---|---|

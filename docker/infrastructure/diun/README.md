@@ -2,7 +2,7 @@
 
 Diun (Docker Image Update Notifier) monitora automaticamente
 tutte le immagini Docker in uso e invia una notifica quando
-viene rilasciata una nuova versione upstream — nessun
+viene rilasciata una nuova versione upstream; nessun
 aggiornamento inaspettato, pieno controllo su quando aggiornare.
 
 ---
@@ -65,6 +65,6 @@ Per i dettagli → [Docker Socket Proxy](../../../security/socket-proxy/README.m
 
 ## Note
 
-- Diun non aggiorna mai automaticamente le immagini — si limita a notificare
+- Diun non aggiorna mai automaticamente le immagini, si limita a notificare
 - Il canale di notifica va configurato nel `.env` prima del primo avvio
 - I log mostrano in dettaglio ogni immagine monitorata e il suo stato

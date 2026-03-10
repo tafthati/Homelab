@@ -8,7 +8,7 @@ e invia notifiche immediate in caso di anomalie o downtime.
 
 ## Perché Uptime Kuma
 
-Sapere che un servizio è "su" non basta — bisogna saperlo in tempo
+Sapere che un servizio è "su" non basta (te pare), bisogna saperlo in tempo
 reale quando va giù. Uptime Kuma effettua controlli periodici su
 ogni servizio del homelab e notifica immediatamente via canali
 configurabili, con uno storico visivo degli incidenti.

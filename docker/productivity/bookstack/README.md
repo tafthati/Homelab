@@ -2,7 +2,7 @@
 
 BookStack è una piattaforma wiki self-hosted per la documentazione
 interna, organizzata gerarchicamente in Scaffali, Libri, Capitoli
-e Pagine — semplice da usare, potente da organizzare.
+e Pagine. Semplice da usare, potente da organizzare. (finest marketing btw)
 
 ---
 
@@ -12,7 +12,7 @@ Un homelab cresce nel tempo e con esso la complessità delle
 configurazioni, delle procedure e delle decisioni tecniche prese.
 BookStack permette di documentare tutto in modo strutturato:
 guide di installazione, configurazioni, troubleshooting, note
-di progetto — tutto consultabile e ricercabile in un secondo.
+di progetto; tutto consultabile e ricercabile in un secondo.
 
 ---
 
@@ -66,18 +66,8 @@ BookStack organizza i contenuti in quattro livelli gerarchici:
 
 ---
 
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
-
----
-
 ## Note
 
 - Il database MariaDB va avviato e pronto prima che BookStack si connetta
-- Fare backup regolari del volume del database — contiene tutta la documentazione
+- Fare backup regolari del volume del database poichè contiene tutta la documentazione
 - I dati sono persistiti in volumi Docker dedicati per app e database

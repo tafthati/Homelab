@@ -41,5 +41,5 @@ Ogni servizio ha la propria cartella con `docker-compose.yml`,
 - Ogni cartella contiene sempre `docker-compose.yml`, `.env.example` e `README.md`
 - I file `.env` reali sono esclusi dal repository tramite `.gitignore`
 - I servizi che necessitano di accesso al Docker daemon usano
-  `tecnativa/docker-socket-proxy` — mai il socket diretto
+  `tecnativa/docker-socket-proxy`, mai il socket diretto
 - Tutte le porte sono esposte esclusivamente in LAN, mai su internet

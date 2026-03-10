@@ -50,16 +50,6 @@ Per i dettagli → [Docker Socket Proxy](../../../security/socket-proxy/README.m
 
 ---
 
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
-
----
-
 ## Note
 
 - La configurazione dei widget avviene tramite file YAML montati come volume — tutto versionabile su Git

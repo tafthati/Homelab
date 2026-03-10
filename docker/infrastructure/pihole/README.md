@@ -1,7 +1,7 @@
 # 🕳️ Pi-hole
 
 Pi-hole è un DNS server locale che funge da ad-blocker a livello
-di rete — blocca pubblicità, tracker e domini malevoli per tutti
+di rete e blocca pubblicità, tracker e domini malevoli per tutti
 i dispositivi connessi alla rete locale, senza installare nulla
 sui singoli dispositivi.
 
@@ -51,20 +51,10 @@ qualsiasi dispositivo: PC, smartphone, TV, console.
 
 ---
 
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
-
----
-
 ## Note
 
 - Il router di rete deve essere configurato per usare l'IP del server
   come DNS primario, oppure impostarlo manualmente su ogni dispositivo
-- In caso Pi-hole sia irraggiungibile, la rete perde la risoluzione DNS —
+- In caso Pi-hole sia irraggiungibile, la rete perde la risoluzione DNS;
   configurare sempre un DNS secondario (es. `1.1.1.1`) come fallback
 - Le statistiche e le blocklist sono persistite in un volume Docker

@@ -66,3 +66,5 @@ sudo journalctl -u jellyfin -f
 - Installato come pacchetto nativo per performance di transcodifica ottimali
 - In combinazione con Samba, i file possono essere aggiunti alla libreria
   anche tramite file sharing dalla rete locale
+- Esiste un app per Pc e Smartphone che riproduce nativa e bypassa la transcodifica
+  per questo motivo può tranquillamente essere installato su Docker

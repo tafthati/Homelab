@@ -89,6 +89,6 @@ al minimo necessario.
 
 <div align="center">
 
-*Self-hosted with ❤️  and 🚬.  Built to learn, documented to share*
+*Self-hosted with ❤️  and 🚬 .    Built to learn, documented to share*
 
 </div>

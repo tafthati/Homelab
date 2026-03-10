@@ -109,4 +109,4 @@ e in sola lettura — principio di least privilege applicato a Docker.
 Diun (Docker Image Update Notifier) monitora continuamente tutte le
 immagini Docker in uso e invia una notifica Telegram non appena viene rilasciata
 una nuova versione upstream. Gli aggiornamenti vengono quindi applicati
-manualmente e consapevolmente — nessun auto-update inaspettato.
+manualmente e consapevolmente; nessun auto-update inaspettato.

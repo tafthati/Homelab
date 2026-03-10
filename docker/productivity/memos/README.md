@@ -1,7 +1,7 @@
 # 📝 Memos
 
 Memos è un'applicazione self-hosted per le note rapide in stile
-microblog — leggera, veloce e minimalista. Perfetta per catturare
+microblog leggera, veloce e minimalista. Perfetta per catturare
 pensieri, appunti tecnici e promemoria senza la complessità
 di un sistema di note completo.
 
@@ -12,7 +12,7 @@ di un sistema di note completo.
 A volte serve uno spazio semplice dove buttare giù un'idea,
 un comando da ricordare o una nota veloce senza aprire BookStack
 e creare una pagina strutturata. Memos riempie questo spazio:
-è sempre aperto in un tab del browser, pronto in un secondo.
+è sempre aperto in un tab del browser, pronto in un second damn.
 
 ---
 
@@ -48,19 +48,9 @@ e creare una pagina strutturata. Memos riempie questo spazio:
 
 ---
 
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
-
----
-
 ## Note
 
 - I dati sono persistiti in un volume Docker dedicato con database SQLite
-- Memos è volutamente minimalista — non è un sostituto di BookStack
+- Memos è volutamente minimalista, non è un sostituto di BookStack
   ma un complemento per note veloci e informali
 - Il tag `stable` garantisce versioni testate e affidabili

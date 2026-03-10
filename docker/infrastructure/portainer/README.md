@@ -1,7 +1,7 @@
 # 🐳 Portainer
 
 Portainer è una GUI web per la gestione completa di container, immagini,
-volumi e reti Docker — tutto accessibile via browser senza toccare il terminale.
+volumi e reti Docker, tutto accessibile via browser senza toccare il terminale.
 
 ---
 
@@ -47,14 +47,6 @@ Per i dettagli sul pattern → security/socket-proxy/README.md
 |---|---|
 | docker-compose.yml | Definizione del servizio e del socket proxy dedicato |
 | .env.example | Variabili d'ambiente necessarie (copiare in .env) |
-
----
-
-## Deploy
-
-    cp .env.example .env
-    nano .env
-    docker compose up -d
 
 ---
 

@@ -1,7 +1,7 @@
 # 🛠️ Scriptini
 
 Raccolta di script bash scritti per automatizzare operazioni
-ricorrenti sul server — manutenzione, monitoraggio e gestione
+ricorrenti sul server come manutenzione, monitoraggio e gestione
 dei servizi Docker.
 
 ---

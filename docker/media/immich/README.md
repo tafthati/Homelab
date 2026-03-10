@@ -1,7 +1,7 @@
 # 📸 Immich
 
 Immich è una soluzione self-hosted per il backup automatico e la
-gestione delle foto — un'alternativa completa a Google Photos che
+gestione delle foto un'alternativa completa a Google Photos che
 gira interamente sul proprio server, con pieno controllo sui dati.
 
 ---
@@ -11,7 +11,7 @@ gira interamente sul proprio server, con pieno controllo sui dati.
 Le foto sono tra i dati più personali e preziosi che esistano.
 Affidarle a servizi cloud esterni significa perdere il controllo
 su privacy, conservazione e accesso. Immich offre le stesse
-funzionalità di Google Photos — backup automatico da mobile,
+funzionalità di Google Photos, backup automatico da mobile,
 riconoscimento facciale, ricerca per luogo e data, album condivisi
 — ma tutto rimane sul proprio hardware.
 
@@ -55,16 +55,6 @@ riconoscimento facciale, ricerca per luogo e data, album condivisi
 |---|---|
 | `docker-compose.yml` | Definizione di tutti e 4 i container dello stack |
 | `.env.example` | Variabili d'ambiente necessarie (copiare in `.env`) |
-
----
-
-## Deploy
-
-```bash
-cp .env.example .env
-nano .env
-docker compose up -d
-```
 
 ---
 
