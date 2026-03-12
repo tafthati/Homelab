@@ -1,0 +1,41 @@
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    labels:
+      - "diun.enable=true"
+    # DNS upstream usati da Pi-hole per risolvere i domini non bloccati
+    dns:
+      - 9.9.9.9           # Quad9 (primario)
+      - 149.112.112.112   # Quad9 (fallback)
+    ports:
+      # --- DNS (TCP/UDP) ---
+      # Esposto su interfaccia WireGuard e LAN
+      - "${PIHOLE_IP_VPN}:53:53/tcp"
+      - "${PIHOLE_IP_VPN}:53:53/udp"
+      - "${PIHOLE_IP_LAN}:53:53/tcp"
+      - "${PIHOLE_IP_LAN}:53:53/udp"
+      # --- Web UI (HTTP) ---
+      - "${PIHOLE_IP_VPN}:${PIHOLE_PORT_HTTP}:80/tcp"
+      - "${PIHOLE_IP_LAN}:${PIHOLE_PORT_HTTP}:80/tcp"
+      # --- Web UI (HTTPS — certificato self-signed autogenerato da FTL) ---
+      # - "${PIHOLE_IP_VPN}:443:443/tcp"
+      # --- DHCP (abilitare solo se Pi-hole gestisce il DHCP) ---
+      # - "67:67/udp"
+      # --- NTP (abilitare solo se Pi-hole fa da server NTP) ---
+      # - "123:123/udp"
+    environment:
+      - TZ=${TZ}
+      # Password per accedere alla web UI
+      - FTLCONF_webserver_api_password=${PIHOLE_ADMIN_PASSWORD}
+      # 'ALL' necessario con la rete bridge di Docker
+      - FTLCONF_dns_listeningMode=all
+    volumes:
+      # Database e configurazione persistente di Pi-hole
+      - './etc-pihole:/etc/pihole'
+      # Configurazione dnsmasq custom (non necessaria per nuove installazioni v6)
+      # - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    restart: unless-stopped

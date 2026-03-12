@@ -1,0 +1,43 @@
+networks:
+  diun-net:
+    driver: bridge
+services:
+  socket-proxy-diun:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: socket-proxy-diun
+    restart: unless-stopped
+    environment:
+      CONTAINERS: 1   # Solo lista container per notifiche
+      IMAGES: 1       # Lista immagini
+      POST: 0         # ⚠️  Diun non crea container — mantenere a 0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - diun-net
+    # ⚠️  Porta non esposta all'host — il proxy è raggiungibile
+    #     solo da Diun tramite la rete interna diun-net
+
+  diun:
+    image: crazymax/diun:latest
+    container_name: diun
+    command: serve
+    restart: unless-stopped
+    depends_on:
+      - socket-proxy-diun
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=${TZ}
+      - LOG_LEVEL=info
+      - LOG_JSON=false
+      - DIUN_WATCH_WORKERS=${DIUN_WATCH_WORKERS}
+      - DIUN_WATCH_SCHEDULE=${DIUN_WATCH_SCHEDULE}
+      - DIUN_WATCH_FIRSTCHECKNOTIF=true
+      - DIUN_PROVIDERS_DOCKER_ENDPOINT=tcp://socket-proxy-diun:2375
+      - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=false
+      # --- Notifiche Telegram ---
+      - DIUN_NOTIF_TELEGRAM_TOKEN=${DIUN_TELEGRAM_TOKEN}
+      - DIUN_NOTIF_TELEGRAM_CHATIDS=${DIUN_TELEGRAM_CHATID}
+      - DIUN_NOTIF_TELEGRAM_TEMPLATEBODY=🔔 **AGGIORNAMENTO DISPONIBILE**\n\n📦 **Container:** {{ .Entry.Image }}\n🔗 **Info:** [Link Docker Hub]({{ .Entry.Image.HubLink }})\n⏰ **Rilevato:** {{ .Entry.Manifest.Created.Format "2006-01-02 15:04:05" }}\n\n💡 **Azione richiesta:**\nEsegui `./aggiorna_docker.sh` e seleziona il container dalla lista.\n\n⚠️ *Ricorda di verificare i changelog prima dell'aggiornamento.*
+    networks:
+      - diun-net
